@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.header {
+  background-image: url(../img/m-h-day.jpg);
+  background-size: 100% 110%;
+  height: 620px;
+  border-bottom-right-radius: 40% 40%;
+  padding: 20px 135px; }
+  .header .landing-logo {
+    display: flex;
+    margin-bottom: 60px;
+    align-items: flex-start;
+    text-align: center;
+    font-weight: bold; }
+    .header .landing-logo img {
+      display: block;
+      width: 40px;
+      height: 40px; }
+    .header .landing-logo p {
+      font-family: "Hind";
+      font-size: 20px;
+      margin: 0;
+      padding: 0 5px; }
+      .header .landing-logo p span {
+        display: block;
+        font-size: 10px;
+        font-weight: normal; }
+  .header .header_heading {
+    width: 400px;
+    font-family: "Source Sans Pro";
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    margin: 20px; }
+    .header .header_heading::after {
+      content: "";
+      display: block;
+      width: 265px;
+      height: 25px;
+      background-color: #14A0C7;
+      position: absolute;
+      bottom: 10px;
+      z-index: -1; }
+  .header .header_text {
+    white-space: pre-line; }
+  .header .header_button {
+    width: 120px;
+    height: 40px; }
