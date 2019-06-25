@@ -1,74 +1,210 @@
-@import'_variables1';
+@mixin after($width, $height, $bottom, $left) {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $underline;
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+    z-index: -1;
+}
+
+%button {
+    width: 120px;
+    height: 40px;
+    background-color: $button;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
 
 $fonts: (
-    source: 'Source Sans Pro',
-    hind: 'Hind',
-    fresca: 'Fresca'
+    main: $mainFont,
+    content: $secondFont
 );
 
 body {
     margin: 0;
     padding: 0; 
+    background-color: $background;
 }
 
 *{
     box-sizing: border-box;
 }
 
+.landing-logo {
+    display:flex;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    text-align: center;
+    font-weight: bold;
+    img{
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    p {
+        font-family: map-get($fonts, content);
+        font-size: 20px;
+        margin:0;
+        padding: 0 5px;
+        span {
+            display: block;
+            font-size: 10px;
+            font-weight: normal;
+        }
+    }
+}
 .header {
     background-image: $headerBackgroundImg;
     background-size: 100% 110%;
     height: 620px;
     border-bottom-right-radius: 40% 40%;
     padding: 20px 135px;
+    color: $colorText;
     .landing-logo {
-        display:flex;
-        margin-bottom: 60px;
-        align-items: flex-start;
-        text-align: center;
+        color: $colorText;
+    }
+    &_heading {
+        width: 500px;
+        font-family: map-get($fonts, main);
+        font-size: 63px;
         font-weight: bold;
-        img{
-            display: block;
-            width: 40px;
-            height: 40px;
+        z-index: 1;
+        margin: 0px;
+        &::after {
+            @include after(265px, 25px, 10px, 0);
         }
-        p {
-            font-family: map-get($fonts, hind);
-            font-size: 20px;
-            margin:0;
-            padding: 0 5px;
-            span {
-                display: block;
-                font-size: 10px;
-                font-weight: normal;
+    }
+    &_text {
+        white-space: pre-line;
+        font-family: map-get($fonts, content);
+        line-height: 22px;
+        font-size: 0.9em;
+        margin-bottom: 40px;
+    }
+    &_button {
+        @extend %button;    }
+}
+.header_heading {
+    position: relative;
+}
+.section {
+    width: 1100px;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    &_text {
+        font-size: 35px;
+        font-family: map-get($fonts, main);
+        font-weight: bold;
+        position: relative;
+        color: $colorText;
+        &::after {
+            @include after(160px, 15px, 5px, 560px);
+        }
+    }
+    &_card_wrap {
+        display: flex;
+        justify-content: space-between;
+        .section_card {
+            height: 400px;
+            width: 350px;
+            background-color: $card;
+            border-radius: 5px;
+            padding: 15px;
+            color: white;
+            z-index: -3;
+            position: relative;
+            &_img {
+                width: 100%;
+                border-radius: 5px;
+            }
+            &_heading {
+                font-size: 20px;
+                margin: 0;
+                font-family: map-get($fonts, main);
+                font-weight: bold;
+                position: relative;
+            }
+            &:nth-child(1){
+                .section_card_underline {
+                    @include after(158px, 10px, 0px, 80px);
+                }
+            }
+            &:nth-child(2){
+                .section_card_underline {
+                    @include after(140px, 10px, 0px, 90px);
+                }
+            }
+            &:nth-child(3){
+                .section_card_underline {
+                    @include after(100px, 10px, 0px, 110px);
+                }
+            }
+            &_text {
+                font-family: map-get($fonts, content);
+                font-size: 0.9em;
             }
         }
     }
-    .header_heading {
-        width: 400px;
-        font-family: map-get($fonts, source);
-        font-size: 60px;
-        font-weight: bold;
+    &_banner {
+        width: 840px;
+        height: 125px;
+        margin: auto;
+        background: $gradientBackground;
+        border-radius: 5px;
+        display: flex;
+        padding: 20px 80px;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
-        z-index: 1;
-        margin: 20px;
-        &::after {
-            content: "";
-            display: block;
-            width: 265px;
-            height: 25px;
-            background-color: $underline;
-            position: absolute;
-            bottom: 10px;
-            z-index: -1;
+        top: 160px;
+        &_text_wrap {
+            text-align: left;
+            font-family: Fresca;
+            .section_banner_heading {
+                font-family: map-get($fonts, main);
+                font-size: 30px;
+                font-weight: bold;
+                margin: 0;
+                color: $colorText;
+            }
+            .section_banner_text{
+                font-family: map-get($fonts, content);
+                color: white;
+                font-size: 0.9em;
+            }
+        }
+        &_button {
+            @extend %button; 
         }
     }
-    .header_text {
-        white-space: pre-line;
-        font-family: map-get($fonts, sourse);
+}
+.footer {
+    background-color: $card;
+    height: 230px;
+    color: white;
+    margin-top: 100px;
+    &-wrap {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
     }
-    .header_button {
-        width: 120px;
-        height: 40px;
+    &_logo{
+        margin-bottom: 0;
+    }
+    &_text {
+        width: 270px;
+    }
+    &-cr {
+        display: block;
+    }
+    &_text, &-cr {
+        font-size: 0.9em;
+        font-family: map-get($fonts, content);
     }
 }
