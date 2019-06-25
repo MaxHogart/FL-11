@@ -156,7 +156,8 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    top: 160px; }
+    top: 160px;
+    z-index: -2; }
     .section_banner_text_wrap {
       text-align: left;
       font-family: Fresca; }
@@ -165,7 +166,18 @@ body {
         font-size: 30px;
         font-weight: bold;
         margin: 0;
-        color: white; }
+        color: white;
+        position: relative; }
+        .section_banner_text_wrap .section_banner_heading::after {
+          content: "";
+          display: block;
+          width: 60px;
+          height: 10px;
+          background-color: #ff4e33;
+          position: absolute;
+          bottom: 5px;
+          left: 120px;
+          z-index: -1; }
       .section_banner_text_wrap .section_banner_text {
         font-family: "Fresca", sans-serif;
         color: white;
@@ -175,7 +187,9 @@ body {
   background-color: #3b3f50;
   height: 230px;
   color: white;
-  margin-top: 100px; }
+  margin-top: 100px;
+  position: relative;
+  z-index: -3; }
   .footer-wrap {
     display: flex;
     height: 100%;

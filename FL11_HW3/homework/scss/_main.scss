@@ -162,6 +162,7 @@ body {
         align-items: center;
         position: relative;
         top: 160px;
+        z-index: -2;
         &_text_wrap {
             text-align: left;
             font-family: Fresca;
@@ -171,6 +172,10 @@ body {
                 font-weight: bold;
                 margin: 0;
                 color: $colorText;
+                position: relative;
+                &::after{
+                    @include after(60px, 10px, 5px, 120px); 
+                }
             }
             .section_banner_text{
                 font-family: map-get($fonts, content);
@@ -188,6 +193,8 @@ body {
     height: 230px;
     color: white;
     margin-top: 100px;
+    position: relative;
+    z-index: -3;
     &-wrap {
         display: flex;
         height: 100%;
