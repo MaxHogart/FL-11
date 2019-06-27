@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+.header_main {
+    background-image: url(../img/sample2.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1px;
+}
+.header_topelem * {
+    margin: 50px;
+}
+.header_name {
+    float: left;
+}
+.header_login, .header_signup {
+    float: right;
+} 
+h1 {
+    font-size: 40px;
+    margin-top: 280px;
+}
+h1 span {
+    font-size: 70px;
+}
+.buttons_wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.buttons_wrapper a {
+    width: 215px;
+    height: 50px;
+    border: 3px solid white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 100px;
+    margin-top: 170px;
+}
+.header_angle {
+    background: linear-gradient(#E8E8E8 50%, #000000 50%);
+    /* display: grid; */
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "topleft topright" "bottomleft bottomright"
+}
+.header_content:nth-child(1) {
+    grid-area: topright;
+    color: #FFFFFF;
+}
+.header_content:nth-child(2) {
+    grid-area: bottomleft;
+}
+.articles {
+    background-color: #E8E8E8;
+    text-align: center;
+    padding: 50px;
+}
+h2  span{
+    font-size: normal;
+}
+article {
+    display: flex;
+    margin-bottom: 10px;
+}
+.article_img, .article_content {
+    width: 50%;
+}
+.article_img {
+    position: relative;
+    background-size: cover;
+    padding: 20px;
+}
+.article_img:nth-child(1){
+    background-image: url(../img/sample-1.jpg)
+}
+.article_img:nth-child(2){
+    background-image: url(../img/sample-2.jpg)
+}
+article p {
+    margin-bottom: 50px;
+    vertical-align: text-bottom;
+}
+.button {
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #F3F3F3;
+    outline: none;
+    padding: 10px;
+}
+.colors {
+    color: #097774;
+    color: #FFFFFF;
+    color: #F3F3F3;
+    color: #F0F0F0;
+    color: #000000;
+    color: #E8E8E8;
+    color: #9E9E9E;
+}
