@@ -192,6 +192,7 @@ footer p {
     float: left;
     font-size: 0.8em;
     color: #9E9E9E;
+    margin-left: 5px;
 }
 footer nav {
     float: right;
