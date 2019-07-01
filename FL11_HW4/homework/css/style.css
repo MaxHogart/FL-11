@@ -67,7 +67,7 @@ h1 span {
     padding: 50px;
 }
 h2  span{
-    font-size: normal;
+    font-weight: normal;
 }
 article {
     display: flex;
