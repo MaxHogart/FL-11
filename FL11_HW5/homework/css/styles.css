@@ -1,3 +1,29 @@
+footer p{
+  opacity: 0.6;
+}
+.right-field {
+  width: 10%;
+}
+body {
+  font-family: roboto;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+
+/* Your styles go here */
 *{
   font-weight: 200;
   box-sizing: border-box;
@@ -10,6 +36,7 @@ header, footer, main {
 }
 header, footer {
   background-color: #162b4d;
+  text-align: left;
 }
 body {
   background: #0b192f;
@@ -19,6 +46,7 @@ body {
 header {
   justify-content: space-between;
   margin-bottom: 15px;
+  padding-left: 10px;
 }
 footer{
   margin-top: 15px;
@@ -58,7 +86,11 @@ nav a{
   padding: 30px;
 }
 nav a:hover {
-  background-color: #fff;
+  background-color: rgba(255,255,255, 0.3);
+  transition: .5s;
+}
+.sandwich-button {
+  display: none;
 }
 .card {
   display: flex;
@@ -101,6 +133,7 @@ nav a:hover {
 }
 .card:hover .img, .card:hover .content{
   opacity: 0.5;
+  transition: .5s;
 }
 .news{
   background-color: #fff;
@@ -111,37 +144,68 @@ nav a:hover {
 .news .content {
   padding: 30px;
 }
-
-:root {
-  --bg-color--dark: #0b192f;
-  --bg-color--header: #162b4d;
-  --link: #fff;
-  --link--hover: #b8b8b8;
-  --bg-footer-color: #162b4d;;
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+  header, footer {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
+  nav {
+    display: none;
+  }
+  .sandwich-button {
+    width: 17px;
+    margin: auto;
+    display: block;
+  }
+  .sandwich-button div {
+    background-color: #fff;
+    height: 1px;
+    margin: 6px auto;
+  }
+  section {
+    width: 60%;
+  }
+  .card {
+    display: block;
+  }
+  .card .img, .card .content {
+    width: 100%;
+  }
+  .card .content .time{
+    position: static;
+    text-align: center;
+  }
+  section .card .content, .card:nth-child(even) .content{
+    padding: 60px;    
+  }
+  .card:nth-child(even) .content {
+    text-align: left;
+  }
+  aside {
+    width: 36%;
+  }
+  .right-field {
+    width: 100%;
+  }
 }
-footer p{
-  opacity: 0.6;
+@media (max-width: 480px) {
+  main {
+    display: block;
+  }
+  section {
+    width: 100%;
+  }
+  aside {
+    width: 100%;  
+  }
+  .news {
+    margin: 0 auto 20px;
+  }
+  footer {
+    margin-top: 30px;
+  }
 }
-.right-field {
-  width: 10%;
-}
-body {
-  font-family: roboto;
-}
-.post-1 {
-	background: #B71757;
-}
-.post-2 {
-	background: #0D7E71;
-}
-.post-3 {
-	background: #b1660e;
-}
-.post-4 {
-	background: #d12767;
-}
-.post-5 {
-	background: #2d95bb;
-}
-
-/* Your styles go here */
