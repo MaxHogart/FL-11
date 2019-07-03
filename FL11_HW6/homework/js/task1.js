@@ -1,11 +1,11 @@
-let aX = 0,
-    aY = 0,
-    bX = 2,
-    bY = 2,
-    cX = 1,
-    cY = 1,
+let aX = +prompt('Введіть координату точки А по осі Х', 0),
+    aY = +prompt('Введіть координату точки А по осі Y', 0),
+    bX = +prompt('Введіть координату точки B по осі Х', 0),
+    bY = +prompt('Введіть координату точки B по осі Y', 0),
+    cX = +prompt('Введіть координату точки C по осі Х', 0),
+    cY = +prompt('Введіть координату точки C по осі Y', 0),
     middlePoitX = (aX + bX)/2,
     middlePoitY = (aY + bY)/2,
-    check = (cX == middlePoitX) && (cY = middlePoitY);
+    check = cX === middlePoitX && cY === middlePoitY;
 console.log(Boolean(check));
 
