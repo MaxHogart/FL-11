@@ -10,7 +10,6 @@ let enteredEmail = prompt('Please enter your email', ''),
         }
     ],
     validEmail = false,
-    minPassword = 5,
     rightPassword,
     enteredPassword,
     changePassword;
@@ -34,7 +33,7 @@ if (enteredEmail) {
                 let oldPassword = prompt('Please enter your old password', '');
                 if (oldPassword === rightPassword) {
                     let newPassword = prompt('Please enter your new password', '');
-                    if (newPassword.length < minPassword) {
+                    if (newPassword.length < minSymbols) {
                         alert('It’s too short password. Sorry.')
                     } else {
                         let secondNewPassword = prompt('Please enter your new password again', '');
