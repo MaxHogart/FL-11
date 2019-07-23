@@ -19,8 +19,10 @@ function showMaxListItem () {
         allItems= document.querySelectorAll('li').length ;
     if (allItems === maxItem) {
         message.style.opacity = 1;
+        addActionInput.disabled = true;
     } else {
         message.style.opacity = 0;
+        addActionInput.disabled = false;
     }
     
 }
@@ -67,6 +69,7 @@ function createElementsForList () {
     newElemLabel.addEventListener('click', uncheckedCheckbox);
     newElemEditButton.addEventListener('click', editListElem);
     newElemDeleteButton.addEventListener('click', deleteListElem);
+    newElemDeleteButton.addEventListener('click', showMaxListItem);
     newElem.addEventListener('dragover', allowDrop);
     newElem.addEventListener('dragstart', handleDragStart, false);
     newElem.addEventListener('drop', handleDrop, false);
@@ -83,8 +86,6 @@ function handleDrop(event) {
     if (dragSrcEl !== this) {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = event.dataTransfer.getData('text/html');
-    //   addListeners(this);
-    //   addListeners(dragSrcEl);
     }
     return false;
 }  
