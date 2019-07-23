@@ -64,7 +64,9 @@ function battle (fighter1, fighter2) {
     } else {
         while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
             fighter1.attack(fighter2);
-            if (fighter2.getHealth() < 0) {break};
+            if (fighter2.getHealth() < 0) {
+                break
+            }
             fighter2.attack(fighter1);
         }
         if (fighter1.getHealth>fighter2.getHealth) {
