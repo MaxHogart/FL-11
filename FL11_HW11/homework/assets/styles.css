@@ -1,2 +1,50 @@
-/* Your styles goes here */
-
+body {
+    color: rgb(38, 130, 187);
+}
+.header {
+    text-align: center;
+}
+form {
+    display: flex;
+}
+p {
+    opacity: 0;
+}
+.add {
+    margin: 5px 20px;
+    color: white;
+    background-color: lightgray;    
+    border-radius: 5px;
+}
+.edit {
+    color: gray;
+}
+.delete, .save {
+    color: rgb(38, 130, 187);
+}
+li div {
+    width: 100%;
+    text-align: right;
+}
+button {
+    border: none;
+    background-color: transparent;
+}
+button[disabled] {
+    background-color: gray;
+    color: lightgray;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+ul {
+    border-top: 5px solid lightblue;
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    display: flex;
+}
