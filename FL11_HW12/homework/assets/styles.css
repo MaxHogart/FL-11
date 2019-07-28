@@ -1,2 +1,63 @@
 /* Your styles go here */
 
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    text-align: center;
+}
+.container{
+    max-width: 1200px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 10px;
+    display: none;
+}
+input{
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+ul{
+    text-align: left;
+}
+li{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    display: block;
+    width: 95%;
+}
+/*li:after{
+    content: '';
+    display: block;
+    clear: both;
+}*/
+.close{
+    /*float: right;*/
+    background: #ccc;
+    padding: 3px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.active{
+    display: block;
+}
+.done{
+    background: #ddd;
+}
+
+.alert{
+    position: absolute;
+    top: 30px;
+    left: -100%;
+
+    background: lightcoral;
+    padding: 5px;
+    border: 1px solid #000;
+    transition: .5s;
+}
