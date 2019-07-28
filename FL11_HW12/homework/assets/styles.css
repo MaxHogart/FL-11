@@ -32,13 +32,7 @@ label{
     display: block;
     width: 95%;
 }
-/*li:after{
-    content: '';
-    display: block;
-    clear: both;
-}*/
 .close{
-    /*float: right;*/
     background: #ccc;
     padding: 3px;
     cursor: pointer;
