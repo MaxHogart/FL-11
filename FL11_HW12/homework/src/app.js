@@ -29,7 +29,7 @@ counterTasks();
 
 document.addEventListener('click', function(e){
 	let indxTask = indexTask(e.target);
-	if(e.target.localName === 'span'){
+	if(e.target.localName === 'img'){
 		delTask(indxTask);
 		counterTasks();
 	} else if(e.target.localName === 'input' && e.target.id !== 'field' && e.target.id !== 'modifyItem'){
@@ -225,9 +225,9 @@ function createCheckboxElem(parentLI, obj){
 
 function createCloseElem(elem){
 	let span = document.createElement('SPAN');
-    let txt = document.createTextNode('\u00D7');
+    let img = '<img src=assets/img/remove-s.jpg>';
 	span.className = 'close';
-	span.appendChild(txt);
+	span.innerHTML = img;
 	elem.appendChild(span);
 }
 
