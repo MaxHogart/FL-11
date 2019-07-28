@@ -79,20 +79,22 @@ function addTask(){
 }
 
 function modifyToDo(label){
-    let indxTask = indexTask(label);
+    let indxTask = indexTask(label),
+    inputModify = document.getElementById('modifyItem');
+    inputModify.value = label.innerHTML;
     if(!list.children[indxTask].children[0].checked){
         btnModifyTask.onclick = function(){
-            let inputModify = document.getElementById('modifyItem').value;
-            if (checkSameValue(inputModify)) {
+            let inputModifyValue = inputModify.value;
+            if (checkSameValue(inputModifyValue)) {
                 showErr("2: You can't edit already exist item")
                 return;
             }
-            todoList[indxTask].val = inputModify;
+            todoList[indxTask].val = inputModifyValue;
             saveDB();
             hideModifyTask();
             main.classList.toggle('active');
-            list.children[indxTask].children[1].innerText = inputModify;
-            inputModify = '';
+            list.children[indxTask].children[1].innerText = inputModifyValue;
+            inputModifyValue = '';
             removeHash();
         };
     }
