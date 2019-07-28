@@ -55,3 +55,9 @@ label{
     border: 1px solid #000;
     transition: .5s;
 }
+input[type=checkbox] {
+    display: none;
+}
+label{
+    width: 50px;
+}

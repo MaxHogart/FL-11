@@ -28,13 +28,14 @@ if(localStorage.getItem('mytodo')){
 counterTasks();
 
 document.addEventListener('click', function(e){
-	let indxTask = indexTask(e.target);
-	if(e.target.localName === 'img'){
+    let indxTask = indexTask(e.target);
+    console.dir(e.target);
+	if(e.target.className === 'remove' ){
 		delTask(indxTask);
 		counterTasks();
 	} else if(e.target.localName === 'input' && e.target.id !== 'field' && e.target.id !== 'modifyItem'){
 		eventCheckbox(indxTask);
-	} else if(e.target.localName === 'label'){
+	} else if(e.target.localName === 'span'){
         showModifyTask(indxTask);
         modifyToDo(e.target);
     }
@@ -154,7 +155,8 @@ function eventCheckbox(index){
 		todoList[index].checked = !todoList[index].checked;
 		let val = todoList.splice(index, 1)[0];
 		todoList.push(val);
-		saveDB();
+        saveDB();
+        parentLi.firstChild.nextSibling.innerHTML = '<img src=assets/img/done-s.png>'
     } else{
 		let i = 0;
         while(!todoList[i].checked){
@@ -165,8 +167,9 @@ function eventCheckbox(index){
 		todoList.splice(i, 0, movedItem);
         list.insertBefore(parentLi, list.children[i]);
         parentLi.classList.remove('done');
-		saveDB();
-	}
+        saveDB();
+        parentLi.firstChild.nextSibling.innerHTML = '<img src=assets/img/todo-s.png>'
+    }
 }
 
 function delTask(index){
@@ -211,23 +214,30 @@ function createLi(info){
 }
 
 function createCheckboxElem(parentLI, obj){
-	let label = document.createElement('label'),
+    let span = document.createElement('span'),
+    label = document.createElement('label'),
 	checkbox = document.createElement('input');
-	checkbox.setAttribute('type', 'checkbox');
-	checkbox.checked = obj.checked;
-    label.innerText = obj.val;
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('id', obj.id);
+    checkbox.checked = obj.checked;
+    label.setAttribute('for', obj.id);
+    span.innerText = obj.val;
     if(checkbox.checked){
         parentLI.classList.add('done');
+        label.innerHTML = '<img src=assets/img/done-s.png>'
+    } else {
+        label.innerHTML = '<img src=assets/img/todo-s.png>'
     }
     parentLI.appendChild(checkbox);
-	parentLI.appendChild(label);
+    parentLI.appendChild(label);
+    parentLI.appendChild(span);
 }
 
 function createCloseElem(elem){
-	let span = document.createElement('SPAN');
-    let img = '<img src=assets/img/remove-s.jpg>';
-	span.className = 'close';
-	span.innerHTML = img;
-	elem.appendChild(span);
+    let div = document.createElement('div');
+    let img = '<img class="remove" src=assets/img/remove-s.jpg>';
+	div.className = 'close';
+	div.innerHTML = img;
+	elem.appendChild(div);
 }
 
