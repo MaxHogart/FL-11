@@ -29,7 +29,6 @@ counterTasks();
 
 document.addEventListener('click', function(e){
     let indxTask = indexTask(e.target);
-    console.dir(e.target);
 	if(e.target.className === 'remove' ){
 		delTask(indxTask);
 		counterTasks();
@@ -85,6 +84,7 @@ function modifyToDo(label){
     if(!list.children[indxTask].children[0].checked){
         btnModifyTask.onclick = function(){
             let inputModifyValue = inputModify.value;
+            let childrenNumber = 2;
             if (checkSameValue(inputModifyValue)) {
                 showErr("2: You can't edit already exist item")
                 return;
@@ -93,7 +93,7 @@ function modifyToDo(label){
             saveDB();
             hideModifyTask();
             main.classList.toggle('active');
-            list.children[indxTask].children[1].innerText = inputModifyValue;
+            list.children[indxTask].children[childrenNumber].innerText = inputModifyValue;
             inputModifyValue = '';
             removeHash();
         };
