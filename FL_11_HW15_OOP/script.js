@@ -22,8 +22,7 @@ class Hamburger {
                     maxNum: 1,
                     ingredientCallories: 100
                 }
-            },
-            that = this;
+            };
         this.getCallories = () => {
             return callories;
         }
