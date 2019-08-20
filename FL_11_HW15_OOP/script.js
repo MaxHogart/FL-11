@@ -65,7 +65,7 @@ class Hamburger {
                     callories+=ingredient.ingredientCallories;
                     ingredient.num++
                 } else {
-                    console.log(`Sorry, you can add only ${ingredient.num} ${ingredient.name}.`)
+                    console.log(`Sorry, you can add only ${ingredient.maxNum} ${ingredient.name}.`)
                 } 
             }
         }
