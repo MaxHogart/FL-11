@@ -1,80 +1,84 @@
 
 function Charmander(){
-    this.typePokemon = 'Charmander';
-    this.nextLevel   = 'Charmeleon';
+    this.typePokemon = Charmander.name;
+    this.specie = 'Lizard Pokemon';
+    this.type = 'Fire';
+    this.fly = false;
+}
 
-    this.constructorr = function(){
-        this.type = 'Fire';
-        this.fly  = false;
-        this.spice = 'Lizard Pokemon';
-
-        
-        Charmander.prototype.getType = function(){
-            return this.type;
-        }
-        Charmander.prototype.getPokemonType = function(){
-            return this.typePokemon;
-        }
-        Charmander.prototype.getSpecie = function(){
-            return this.spice;
-        }
-        Charmander.prototype.canFly = function (){
-            return this.fly;
-        }
-        Charmander.prototype.evolve = function (){
-            return this.nextLevel;
-        }
-    }
-    this.constructorr();
+Charmander.prototype.getType = function(){
+    return this.type;
+}
+Charmander.prototype.getPokemonType = function(){
+    return this.typePokemon;
+}
+Charmander.prototype.getSpecie = function(){
+    return this.specie;
+}
+Charmander.prototype.canFly = function (){
+    return this.fly;
+}
+Charmander.prototype.evolve = function (){
+    return new Charmeleon();
 }
 
 function Charmeleon(){
-    this.constructorr();
-    this.nextLevel   = 'Charizard';
-    this.typePokemon = 'Charmeleon';
-    this.spice = 'Flame Pokemon';
-
+    this.typePokemon = Charmeleon.name;
+    this.specie = 'Flame Pokemon';
+    Charmeleon.prototype.evolve = function (){
+        return new Charizard();
+    }
 }
 Charmeleon.prototype = new Charmander();
+Charmeleon.prototype.constructor = Charmeleon;
 
 function Charizard(){
-    this.constructorr();
-    this.nextLevel   = 'Charizard';
-    this.typePokemon = 'Charizard';
+    this.typePokemon = Charizard.name;
     this.fly = true;
-    this.spice = 'Flame Pokemon';
 }
-Charizard.prototype = new Charmander();
+Charizard.prototype = new Charmeleon();
+Charizard.prototype.constructor = Charizard;
 
 
 const charmander = new Charmander();
 const charmeleon = new Charmeleon();
-const charizard  = new Charizard();
-console.log(charmander);
-console.log(charmander.getType());
-console.log(charmander.getPokemonType());
-console.log(charmander.getSpecie());
-console.log(charmander.evolve());
-console.log(charmander.canFly());
-
-console.log('------------------');
-
-console.log(charmeleon);
-console.log(charmeleon.getType());
-console.log(charmeleon.getPokemonType());
-console.log(charmeleon.getSpecie());
-console.log(charmeleon.evolve());
-console.log(charmeleon.canFly());
+const charizard = new Charizard();
 
 
-console.log('------------------');
+function Pichu(){
+    this.typePokemon = Pichu.name;
+    this.type = 'Electric';
+    this.fly = false;
+}
+Pichu.prototype.getType = function(){
+    return this.type;
+}
+Pichu.prototype.getPokemonType = function(){
+    return this.typePokemon;
+}
+Pichu.prototype.canFly = function (){
+    return this.fly;
+}
+Pichu.prototype.evolve = function (){
+    return new Pikachu();
+}
+function Pikachu(){
+    this.typePokemon = Pikachu.name;
+    this.type = 'Electric';
+    Pichu.prototype.evolve = function (){
+        return new Raichu();
+    }
+}
+Pikachu.prototype = new Pichu();
+Pikachu.prototype.constructor = Pikachu;
+function Raichu(){
+    this.typePokemon = Raichu.name;
+    this.type = 'Electric';
+}
+Raichu.prototype = new Pikachu();
+Raichu.prototype.constructor = Raichu;
 
-console.log(charizard);
-console.log(charizard.getType());
-console.log(charizard.getPokemonType());
-console.log(charizard.getSpecie());
-console.log(charizard.evolve());
-console.log(charizard.canFly());
-
-
+const pichu = new Pichu();
+const pikachu = new Pikachu();
+const raichu = new Raichu();
 
