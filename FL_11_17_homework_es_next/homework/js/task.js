@@ -18,7 +18,7 @@ console.log(arrayToCopy === copiedArray);
 
 //Task 3 
 
-const addUniqueId = (obj) => Object.assign({}, obj, {id: Symbol('id')});
+const addUniqueId = (obj) => Object.assign({}, obj, {[Symbol('id')]: 'id'} );
 
 const obj = {name: 123};
 const newObj = addUniqueId(obj);
