@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.wrapper{
+    width: 1000px;
+    margin: 40px auto;
+    border: 1px solid #000;
+    padding: 20px 0;
+}
+
+.user{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.user .img{
+    width: 25%;
+}
+
+.user .info{
+    width: 75%;
+}
+
+.loader{
+    position: fixed;
+    top: 50px;
+    left: 40%;
+    display: none;
+}
+
+.loader img{
+    width: 100px;
+    height: 100px;
+}
